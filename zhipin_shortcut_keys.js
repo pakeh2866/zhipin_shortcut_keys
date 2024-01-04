@@ -6,7 +6,10 @@
 // @author       pakeh
 // @match        https*://www.zhipin.com/*
 // @include      https*:/www.zhipin.com/*
+// @license      MIT
 // @grant        none
+// @downloadURL https://update.greasyfork.org/scripts/483770/Boss%E7%9B%B4%E8%81%98%E5%BF%AB%E6%8D%B7%E9%94%AE%E7%AD%9B%E9%80%89%E7%AE%80%E5%8E%86.user.js
+// @updateURL https://update.greasyfork.org/scripts/483770/Boss%E7%9B%B4%E8%81%98%E5%BF%AB%E6%8D%B7%E9%94%AE%E7%AD%9B%E9%80%89%E7%AE%80%E5%8E%86.meta.js
 // ==/UserScript==
 
 (function () {
@@ -26,7 +29,7 @@
         const otherButton = btnListChangYongYu[0]
 
         setTimeout(() => {
-            console.log('常用语的值', otherButton);
+            console.log(otherButton.textContent);
             otherButton.click()
         }, 400)
         //第二步点击
@@ -41,7 +44,7 @@
             console.log('btn_send:', btn_send)
             const secondButton = btn_send[0]
             setTimeout(() => {
-                console.log('发送常用语的值', secondButton);
+                console.log(secondButton.textContent);
                 secondButton.click()
             }, 300)
         }, 500)
@@ -49,32 +52,32 @@
 
     // left的触发事件
     function leftrun() {
-        const key_operate_exchange_right = document.getElementsByClassName('operate-exchange-right')
-        console.log('第一层级元素的值', key_operate_exchange_right)
-        if (!key_operate_exchange_right.length) {
+        const listConversationOperate = document.getElementsByClassName('not-fit-wrap')
+        console.log('第一阶段的值', listConversationOperate)
+        if (!listConversationOperate.length) {
             return;
         }
-
-        //修改display的值
-        const divElement = key_operate_exchange_right[0].getElementsByClassName('not-fit-wrap');
-        console.log('divElement的值', divElement);
-        console.log('style的值', divElement[1].style);
-        console.log('display的值', divElement[1].style.display);
-        divElement[1].style.display = null;
-        console.log('display的值', divElement[1].style.display);
-
-        const btnListntf = key_operate_exchange_right[0].getElementsByClassName('operate-icon-item');
+        const btnListntf = listConversationOperate[0].getElementsByClassName('operate-btn');
         console.log('第二阶段的值', btnListntf)
         if (!btnListntf.length) {
             return;
         }
         const leftButton = btnListntf[0]
-        console.log('不合适按钮的值', leftButton);
+        console.log('不合适按钮的值', leftButton)
+
+        // 创建一个新的MouseEnter事件对象
+        const mouseenterEvent = new Event('mouseenter');
+
+        // 获取要触发事件的元素
+        const operateIconItem = listConversationOperate[0].getElementsByClassName('operate-icon-item')[0];
+
+        // 分配事件到指定的元素上并触发该事件
+        operateIconItem.dispatchEvent(mouseenterEvent);
 
 
         setTimeout(() => {
             setTimeout(() => {
-                console.log('开始点击不合适元素')
+                console.log('开始点击')
                 leftButton.click();
             }, 400)
         }, 400)
