@@ -63,7 +63,7 @@
         console.log('不合适按钮的值', leftButton)
 
         //修改display的值
-        const divElement = listConversationOperate[0].getElementsByClassName('not-fit-wrap');;
+        const divElement = listConversationOperate[0].getElementsByClassName('not-fit-wrap');
         console.log('divElement的值', divElement);
         console.log('style的值', divElement[0].style);
         console.log('display的值', divElement[0].style.display);
@@ -71,7 +71,7 @@
         console.log('display的值', divElement[0].style.display);
         setTimeout(() => {
             setTimeout(() => {
-                console.log('开始点击')
+                console.log('开始点击不合适元素')
                 leftButton.click();
             }, 400)
         }, 400)
