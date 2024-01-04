@@ -26,7 +26,7 @@
         const otherButton = btnListChangYongYu[0]
 
         setTimeout(() => {
-            console.log(otherButton.textContent);
+            console.log('常用语的值', otherButton);
             otherButton.click()
         }, 400)
         //第二步点击
@@ -41,7 +41,7 @@
             console.log('btn_send:', btn_send)
             const secondButton = btn_send[0]
             setTimeout(() => {
-                console.log(secondButton.textContent);
+                console.log('发送常用语的值', secondButton);
                 secondButton.click()
             }, 300)
         }, 500)
@@ -49,26 +49,29 @@
 
     // left的触发事件
     function leftrun() {
-        const listConversationOperate = document.getElementsByClassName('not-fit-wrap')
-        console.log('第一阶段的值', listConversationOperate)
-        if (!listConversationOperate.length) {
+        const key_operate_exchange_right = document.getElementsByClassName('operate-exchange-right')
+        console.log('第一层级元素的值', key_operate_exchange_right)
+        if (!key_operate_exchange_right.length) {
             return;
         }
-        const btnListntf = listConversationOperate[0].getElementsByClassName('operate-btn');
+
+        //修改display的值
+        const divElement = key_operate_exchange_right[0].getElementsByClassName('not-fit-wrap');
+        console.log('divElement的值', divElement);
+        console.log('style的值', divElement[1].style);
+        console.log('display的值', divElement[1].style.display);
+        divElement[1].style.display = null;
+        console.log('display的值', divElement[1].style.display);
+
+        const btnListntf = key_operate_exchange_right[0].getElementsByClassName('operate-icon-item');
         console.log('第二阶段的值', btnListntf)
         if (!btnListntf.length) {
             return;
         }
         const leftButton = btnListntf[0]
-        console.log('不合适按钮的值', leftButton)
+        console.log('不合适按钮的值', leftButton);
 
-        //修改display的值
-        const divElement = listConversationOperate[0].getElementsByClassName('not-fit-wrap');
-        console.log('divElement的值', divElement);
-        console.log('style的值', divElement[0].style);
-        console.log('display的值', divElement[0].style.display);
-        divElement[0].style.display = null;
-        console.log('display的值', divElement[0].style.display);
+
         setTimeout(() => {
             setTimeout(() => {
                 console.log('开始点击不合适元素')
