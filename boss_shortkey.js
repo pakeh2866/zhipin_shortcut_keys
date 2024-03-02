@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Boss直聘快捷键筛选简历
-// @namespace    http://tampermonkey.net/
-// @version      1.0
+// @namespace    https://github.com/pakeh2866
+// @version      1.1
 // @description  上下左右快捷筛选简历
 // @author       pakeh
 // @match        https*://www.zhipin.com/*
