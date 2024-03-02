@@ -46,8 +46,8 @@
             setTimeout(() => {
                 console.log(secondButton.textContent);
                 secondButton.click()
-            }, 300)
-        }, 500)
+            }, 100)
+        }, 100)
     };
 
     // left的触发事件
