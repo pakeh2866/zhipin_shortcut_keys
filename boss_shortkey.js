@@ -47,7 +47,7 @@
                 console.log(secondButton.textContent);
                 secondButton.click()
             }, 100)
-        }, 100)
+        }, 200)
     };
 
     // left的触发事件
@@ -79,8 +79,8 @@
             setTimeout(() => {
                 console.log('开始点击')
                 leftButton.click();
-            }, 400)
-        }, 400)
+            }, 100)
+        }, 120)
     };
 
     //检测方向键按键，触发不同的函数。
