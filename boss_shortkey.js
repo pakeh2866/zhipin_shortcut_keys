@@ -31,7 +31,7 @@
         setTimeout(() => {
             console.log(otherButton.textContent);
             otherButton.click()
-        }, 400)
+        }, 50)
         //第二步点击
         setTimeout(() => {
             const phraseContent_find = document.getElementsByClassName('phrase-content')
@@ -47,7 +47,7 @@
                 console.log(secondButton.textContent);
                 secondButton.click()
             }, 100)
-        }, 200)
+        }, 150)
     };
 
     // left的触发事件
